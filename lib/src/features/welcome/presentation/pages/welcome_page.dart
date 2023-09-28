@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/gradient_circle.dart';
+import '../../../dashboard/presentation/widgets/gradient_circle.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -79,7 +79,9 @@ class _Body extends StatelessWidget {
           SizedBox(
             width: size.width * 0.66,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/dashboard');
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromRGBO(65, 229, 237, 1),
                 foregroundColor: const Color.fromRGBO(29, 26, 95, 1),
