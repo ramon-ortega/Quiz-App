@@ -58,7 +58,7 @@ class _Body extends StatelessWidget {
           SizedBox(
             width: size.width * 0.8,
             child: const Text(
-              'Pon a prueba tus conocimientos en programación con este quiz de lenguajes de programación!',
+              'Pon a prueba tus conocimientos en programación con este quiz sobre Flutter y Dart!',
               style: TextStyle(
                 color: Colors.white,
               ),

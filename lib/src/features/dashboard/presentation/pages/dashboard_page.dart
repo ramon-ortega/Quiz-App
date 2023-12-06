@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_app/src/features/dashboard/presentation/bloc/navigation_bloc/navigation_bloc.dart';
-import 'package:quiz_app/src/features/dashboard/presentation/pages/categories_page.dart';
 import 'package:quiz_app/src/features/dashboard/presentation/pages/clasification_page.dart';
 import 'package:quiz_app/src/features/dashboard/presentation/pages/home_page.dart';
 
@@ -10,7 +9,6 @@ class DashboardPage extends StatelessWidget {
 
   static final List<Widget> _screens = [
     const HomePage(),
-    const CategoriesPage(),
     const ClasificationPage(),
   ];
 
@@ -18,16 +16,16 @@ class DashboardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NavigationBloc, NavigationState>(
       builder: ((context, state) {
-        int _currentIndex = 0;
+        int currentIndex = 0;
 
         if (state is NavigateToState) {
-          _currentIndex = state.index;
+          currentIndex = state.index;
         }
 
         return Scaffold(
-          body: _screens[_currentIndex],
+          body: _screens[currentIndex],
           bottomNavigationBar: CustomBottomNavigationBar(
-            currentIndex: _currentIndex,
+            currentIndex: currentIndex,
           ),
         );
       }),
@@ -63,10 +61,10 @@ class CustomBottomNavigationBar extends StatelessWidget {
           icon: Icon(Icons.view_list_rounded),
           label: 'Screen 2',
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.wysiwyg_rounded),
-          label: 'Screen 3',
-        ),
+        // BottomNavigationBarItem(
+        //   icon: Icon(Icons.wysiwyg_rounded),
+        //   label: 'Screen 3',
+        // ),
       ],
     );
   }
